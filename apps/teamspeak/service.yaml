@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: teamspeak
+  namespace: production
+spec:
+  type: NodePort
+  selector:
+    app: teamspeak
+  ports:
+    - name: voice
+      protocol: UDP
+      port: 9987
+      targetPort: 9987
+      nodePort: 30987
